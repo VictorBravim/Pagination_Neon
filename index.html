@@ -5,48 +5,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
-    <title>Liquid</title>
+    <title>Pagination</title>
 </head>
 
 <body>
-    <div id="app">
-        <div id="prize">
-          <div id="prize-lines" class="prize-filter"></div>
-          <div id="prize-shadow" class="prize-filter"></div>
-          <h2 id="prize-label">
-            <span class="asterisk">*</span>
-            <span>CASH PRIZE</span>
-            <span class="asterisk">*</span>      
-          </h2>
-          <h1 id="prize-text"></h1>
-        </div>
-        
-        <div id="shapes">
-          <i class="fa-regular fa-circle"></i>
-          <i class="fa-regular fa-square"></i>
-          <i class="fa-regular fa-triangle"></i>
-        </div>
-        
-        <div id="actions-wrapper">
-          <div id="actions">
-            <div id="theme-actions">
-              <button class="theme-button" data-theme="green" data-selected="true" onclick="handleChangeTheme(event)">
-                <i class="fa-regular fa-circle"></i>
-              </button>
-              <button class="theme-button" data-theme="blue" onclick="handleChangeTheme(event)">
-                <i class="fa-regular fa-square"></i>
-              </button>
-              <button class="theme-button" data-theme="pink" onclick="handleChangeTheme(event)">
-                <i class="fa-regular fa-triangle"></i>
-              </button>
+    <div class="table-container" style="--data-limit: 9">
+        <div class="table" id="table-0" data-limit="9">
+            <div class="table-row table-heading">
+                <div class="table-col">
+                    #
+                </div>
+                <div class="table-col">
+                    Primeiro nome
+                </div>
+                <div class="table-col">
+                    Sobrenome
+                </div>
+                <div class="table-col">
+                    Título
+                </div>
+                <div class="table-col">
+                    Concluído
+                </div>
             </div>
-            <button id="redo-button" type="button" onclick="handleRedo()">
-              <i class="fa-solid fa-arrows-repeat"></i>
-              <span>Rerun</span>
-            </button>
-          </div>
+            <div class="table-row" data-copy="103">
+                <div class="table-col">
+                    <span class="auto-increment">0</span>
+                </div>
+                <div class="table-col">
+                    <span class="auto-firstname"></span>
+                </div>
+                <div class="table-col">
+                    <span class="auto-lastname"></span>
+                </div>
+                <div class="table-col">
+                    <span class="auto-title"></span>
+                </div>
+                <div class="table-col">
+                    <span class="auto-integer" min="0" max="250"></span>
+                </div>
+            </div>
         </div>
-      </div>
+    
+        <div class="pagination-container">
+            <div class="d-flex row flex-fill align-items-end justify-content-center">
+                <span class="pagination-info"></span>
+                <button class="pagination-extreme pagination-left">
+                    <i class="fa-solid fa-angles-left"></i>
+                </button>
+                <button class="pagination-extreme pagination-left-one">
+                    <i class="fa-solid fa-angle-left"></i>
+                </button>
+                <div class="d-flex flex-fill justify-content-center">
+                    <div class="pagination-wrapper">
+                        <ul class="pagination" data-table="table-0"></ul>
+                    </div>
+                </div>
+                <button class="pagination-extreme pagination-right-one">
+                    <i class="fa-solid fa-angle-right"></i>
+                </button>
+                <button class="pagination-extreme pagination-right">
+                    <i class="fa-solid fa-angles-right"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="progress-bar">
+            <div class="progress-point"></div>
+        </div>
+    </div>
     <script src="/script.js"></script>
 </body>
 
